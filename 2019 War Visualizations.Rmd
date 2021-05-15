@@ -5,13 +5,28 @@ output: html_notebook
 ---
 
 ```{r}  
-library(tidyverse)
+library(tidyverse)     ##loading packages
 library(ggplot2)
+library(dcData)
+library(rvest)
+library(dplyr)
+library(lubridate)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+#Wins Above Replacemnt?
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+In this notebook we will be examining the advanced statistic of Wins Above Replacement (WAR) from the 2019 MLB season. 
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+A simple explanation of the WAR statistic is a numerical explanation of how many wins (or loss) a player contributes to a teams record.
 
+We will examining player WAR from the 2019 season (that was the last full season of data we have available) from ESPN.com
+
+```{r}
+page <- 'https://www.espn.com/mlb/war/leaders/_/type/seasonal/year/2019'
+table <- page %>%
+  read_html() %>%
+  html_nodes(css = 'table') %>%
+  html_table(fill = TRUE)
+
+table
+```

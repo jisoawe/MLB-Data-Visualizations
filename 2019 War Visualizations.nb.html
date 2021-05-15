@@ -1761,18 +1761,86 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdncGxvdDIpXG5gYGAifQ== -->
-<pre class="r"><code>library(tidyverse)
-library(ggplot2)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpICAgICAjI2xvYWRpbmcgcGFja2FnZXNcbmBgYCJ9 -->
+<pre class="r"><code>library(tidyverse)     ##loading packages</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4wIOKUgOKUgFxu4pyTIGdncGxvdDIgMy4zLjMgICAgIOKckyBwdXJyciAgIDAuMy40XG7inJMgdGliYmxlICAzLjAuNiAgICAg4pyTIGRwbHlyICAgMS4wLjRcbuKckyB0aWR5ciAgIDEuMS4yICAgICDinJMgc3RyaW5nciAxLjQuMFxu4pyTIHJlYWRyICAgMS40LjAgICAgIOKckyBmb3JjYXRzIDAuNS4xXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG54IGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbnggZHBseXI6OmxhZygpICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxuIn0= -->
+<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+── Attaching packages ────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
+✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+✓ tibble  3.0.6     ✓ dplyr   1.0.4
+✓ tidyr   1.1.2     ✓ stringr 1.4.0
+✓ readr   1.4.0     ✓ forcats 0.5.1
+── Conflicts ───────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeShkY0RhdGEpXG5saWJyYXJ5KHJ2ZXN0KVxuYGBgIn0= -->
+<pre class="r"><code>library(ggplot2)
+library(dcData)
+library(rvest)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiB4bWwyXG5cbkF0dGFjaGluZyBwYWNrYWdlOiDigJhydmVzdOKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnB1cnJy4oCZOlxuXG4gICAgcGx1Y2tcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTpyZWFkcuKAmTpcblxuICAgIGd1ZXNzX2VuY29kaW5nXG4ifQ== -->
+<pre><code>Loading required package: xml2
+
+Attaching package: ‘rvest’
+
+The following object is masked from ‘package:purrr’:
+
+    pluck
+
+The following object is masked from ‘package:readr’:
+
+    guess_encoding</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkobHVicmlkYXRlKVxuYGBgIn0= -->
+<pre class="r"><code>library(dplyr)
+library(lubridate)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYbHVicmlkYXRl4oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpiYXNl4oCZOlxuXG4gICAgZGF0ZSwgaW50ZXJzZWN0LCBzZXRkaWZmLCB1bmlvblxuIn0= -->
+<pre><code>
+Attaching package: ‘lubridate’
+
+The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
+<p>#Wins Above Replacemnt?</p>
+<p>In this notebook we will be examining the advanced statistic of Wins Above Replacement (WAR) from the 2019 MLB season.</p>
+<p>A simple explanation of the WAR statistic is a numerical explanation of how many wins (or loss) a player contributes to a teams record.</p>
+<p>We will examining player WAR from the 2019 season (that was the last full season of data we have available) from ESPN.com</p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFnZSA8LSAnaHR0cHM6Ly93d3cuZXNwbi5jb20vbWxiL3dhci9sZWFkZXJzL18vdHlwZS9zZWFzb25hbC95ZWFyLzIwMTknXG50YWJsZSA8LSBwYWdlICU+JVxuICByZWFkX2h0bWwoKSAlPiVcbiAgaHRtbF9ub2Rlcyhjc3MgPSAndGFibGUnKSAlPiVcbiAgaHRtbF90YWJsZShmaWxsID0gVFJVRSlcblxudGFibGVcbmBgYCJ9 -->
+<pre class="r"><code>page &lt;- &#39;https://www.espn.com/mlb/war/leaders/_/type/seasonal/year/2019&#39;
+table &lt;- page %&gt;%
+  read_html() %&gt;%
+  html_nodes(css = &#39;table&#39;) %&gt;%
+  html_table(fill = TRUE)
 
-<div id="rmd-source-code">LS0tCm5hbWU6ICdNb2ppc29sdXdhIChKaXNvKSBBd2UnCnRpdGxlOiAnMjAxOSBXQVIgVmlzdWFsaXphdGlvbnMnCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfSAgCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGdncGxvdDIpCmBgYAoKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkNtZCtPcHRpb24rSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkNtZCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLiAKClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4KCg==</div>
+table</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbiJ9 -->
+<pre><code>[[1]]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NTIsIm5jb2wiOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQTZWWlczUGlOaFRtNHJRVGN0bDArdEpILzRFdzJMTEJQSkprUTRjTm13eWtEZHMzeFZiQUUwZkt5UFoyeVZOLytiWXlRVG9DQkltM21XSHljWFR1NTBoSDJLT0xDV3BNR3BWS3BWNnh4S2UrSjJCbDc0L2J5OU9nVXJGcTRrdFZMT3dYLzc4SnBsOEZLTGhQeE1kYkx2em10cHl1Ylk4SlRobTE3M29qKzRyZ2lQQjB1VjRiZlpJcUhBbGNDWkFFVWx2Vlg0S0tKSFFrQ0NUb1NzMU9hNDI1NXJnS0lZVThoZGFWMTV5T1FvRkMzWFV1MTFGSTZYZlJHdGUyL3pVMzJMYUNsRjZrOUNMbE4xSitvM1cvUWNOVzNaNnpRWG5MNDVyWDJhQkFMc3BWL2FlYnE5NlhqNlBsdCtOekZzM3RNNUlrTVowU3ZxUWU5aEx5elQ3alpQcUU2WkxXR01hUHhMN2xMTStXbEtNaDVtR2VDbE5QTVpGc0o0TTh6V0pxLzBsNGdtbWtWTDZLRDJQS0ZPVUswNURZVjNNcVpROEhPR1QzZGtUNm5EMUpmZWN6SGd1Tm1OcGZTQktIc3lYOTRCUEpTR0lMRnpJaVNYM0NlWnpaNXl5UnBNTWhZNDh4RVFGbVdhcG9PQk5NTS93TXdSM2VjdktWY1h1Y01UNlhxZW5SYk1ibzNCNFJHakhKK2NzNEk4OHpRZ1VyeCtsOXpxZkxoUTk5d3ZpVTJPTm5ycWZ5ZU1EU21YM0JLRTZpVkdrNXVCaUlzZ3p4TENhNVZQd3h5akdQbUQxaUVZK25PWG1SYVJaWmViUXZFendqUEp0REVOL3NjU2hJTDhyVTBXY21VbTczT0tFNFlrdmlmc0U0ekdrNFYrb1didDRVdktIa09saFVaOHc0ZThUUzhSdWM4VmhZUG1mOFBwYU9IMTNsSVU3dGZzeVNPSlBTalRHaklrOTlqcFY3ZnhVKzl6bUo2YU9zeGNsb2tRUzdGK1lVMndQZWxMWjdtSXRPSGVUUlZMSWVqZkFERnRXOUlGK2hjVDlNRnYxa243RXBGcGxRNWZ4OW5ndHAwWEtqZWE2YXJTanhkUUlKUHhiMTVvbm9oQ0hqR1pUaFJqU1IzVXNZVFZVbUJ1VGh3UjZHbjBtY1NBdmpHYWFpaDJKeXIzSjlNTUJmNDhJWnJPcDBlUDN5RWhmYTdtTWluVHU1NUNMTGNSb3kreW9XWGNRaGpYRnFuMlBSMkVtaVRIOWlTU1k2NjQ1UjJWVDdnMXhVZE14VXFnKy9NRUVZTWhyaVNGYnFaQ2kyUlpHdU0yRXNTNGdzUXVOelViN2U3SWxFS2dzaUNVenNXTUdIS1M1NWN0UUZhZjJrcndkTkR5QUNLQSs1ZXFjWkdHRWJJQUtveE5yTnJoRUdBRHNBUFlESUNGMkFhdGExMTBIZEIwcytXUExCVWpuWWZndjZBRDJBQ0tBTDBOa0oxWFRlQkhVUFFsbUJuUkt3YllTK0RrczIwL1hsSmRSRWF3WmxOTkQ3UWtYVmVodm9IUVdxWVZsTDYwbyt0Qzd6REVLT0lUR2dhcGRqdmlGNS9xYU5kOFdtZVl6MHB1bEE4TTZHRURKbUlkaDBTeGRCc0l5QTJqRndlanN6bzFtdnU3clIwaTF6OFZHMWpBUFZjc0JTQ3p4MVNyV01kZG9DMTF0S053VHBRUGxkTU9KQzZHQWF0RHNndlV1NW9jcWFPWURWamNLK3EyTzB5QnhWaVNKZ2RjYzkzZXdZZzV2V0tZalhXNFl1YzJFekdDTFhnK3RvWHVnZUlWRHZnbGFkSXlqYk0zZTlublJBbXhmYW1ORk8yOEFJdFpGZ1B0czNmaUhwRzE0N1E3VnQ0aHVwN1UycSt2a2xkbEVYbHJXekNCbFV3VFlWVURzdk5MUHV1b0dxdDdtNEttMXdwYXB0aFM0c3R3RnFxc3k4bTc4NE5UN3Q0T2dZZEdxS05JWVY2QUgwQWJvbDI4aTZIZDMwTjZxN01xb04xTjFEMlhSVUdnYjZsbHNBakt1M2RIcDZCN3U3aEZaZ2Q2ZThXY3lvdFd2VXVoS1ZhOGpvU2pEYnJ6bGJFbUVhNitZUnZvM1huUFJBcDVic29Xdm9JVlBPRExHdDdEblRUa0piUXRJMnkvdDZjTGVJc2NUbWt3VVpLMmlXMTRKckc2SGk3ZXhVWmN4Y2UyUFJkRTFaZ2J0emFZeDhOK2VXQkpZY1lTTTF3cXdPbkhpMXRtd0lxdzJUeWZJRGxUWExoOXR2elFjT0dGNldENFBXOGp1YUZqamlMYThMUEo2djBhR0FOUzlRMUk2aVdwNmpZVWd2UE8reVVOQU1ORzVmb3l0ZmtHWWZ3V0ZTOEFNZFNsTElBaDJ1OG9VczhHaXhJaTE3U1BOZTk4M3RxcmEyWEkyT3ROc0pjb0JueFI5WFJXNGhUNk5yOXlBRWQ2ZkNsdkxCaGR0RnplMXFrcjdHcmJTNGJZM3VhbGlMMWkydWcrVWFjRS9jb2U1dVpEZTJZRmUrQTNaS3dEYzFsREhjL2pIZTlvOFpObXN3d1pWZksvOC9vRGZEL01FOGxQRnNCYTYrbTlpaitJbWt5MzVyeUU2ZXFKTmdvcDZ1VDlUVDlZbnErSW12a0RySEp1cTl3RVM5RjVpb3NUMXhXbXNlN0hQMmQxTjZjVlJ3LzFOWi9IbnJyb1lKVHFXcmt0aUljSWFiRDF6SWkyL2YxMFIrWnM5WnpLZ1FxaFh2WC9iV2hLdDhqZkFocDRVbjBXazR5K25qcVZ0NWZXZFRmWFZvNFYzMTFUT0ZHNjhtYS84dVZlMHRWZjFFNkRTbThubnBYb0x2aVh4Y2VTd2lYZ1RjTEo1RXk0ZjFEVUZObXhuTHNPUnJoQ3lSbEVWc2xlLy9BYmlBWm94MkdnQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["X1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["X2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["X3"],"name":[3],"type":["chr"],"align":["left"]},{"label":["X4"],"name":[4],"type":["chr"],"align":["left"]},{"label":["X5"],"name":[5],"type":["chr"],"align":["left"]},{"label":["X6"],"name":[6],"type":["chr"],"align":["left"]},{"label":["X7"],"name":[7],"type":["chr"],"align":["left"]},{"label":["X8"],"name":[8],"type":["chr"],"align":["left"]},{"label":["X9"],"name":[9],"type":["chr"],"align":["left"]},{"label":["X10"],"name":[10],"type":["chr"],"align":["left"]}],"data":[{"1":"2019  Season WAR Leaders","2":"2019  Season WAR Leaders","3":"2019  Season WAR Leaders","4":"2019  Season WAR Leaders","5":"2019  Season WAR Leaders","6":"2019  Season WAR Leaders","7":"2019  Season WAR Leaders","8":"2019  Season WAR Leaders","9":"2019  Season WAR Leaders","10":"2019  Season WAR Leaders"},{"1":"RK","2":"PLAYER","3":"WAR","4":"OFF","5":"DEF","6":"WAA","7":"TRPG","8":"ORPG","9":"RAA","10":"WAAWP"},{"1":"1","2":"Cody Bellinger","3":"9","4":"6.6","5":"1.9","6":"7","7":"5","8":"4.7","9":"72.9","10":"0.5"},{"1":"2","2":"Alex Bregman","3":"8.4","4":"7.7","5":"1.2","6":"6.1","7":"5.3","8":"5","9":"62","10":"0.5"},{"1":"3","2":"Mike Trout","3":"8.3","4":"8.3","5":"0.3","6":"6.3","7":"5.5","8":"5","9":"65.7","10":"0.5"},{"1":"4","2":"Marcus Semien","3":"8.1","4":"7.5","5":"1.5","6":"5.8","7":"5.3","8":"5","9":"58.5","10":"0.5"},{"1":"5","2":"Justin Verlander","3":"7.8","4":"0","5":"0","6":"5.8","7":"5","8":"3.4","9":"56.6","10":"0.7"},{"1":"","2":"Mike Minor","3":"7.8","4":"0","5":"0","6":"5.9","7":"5","8":"3.2","9":"57","10":"0.7"},{"1":"7","2":"Lance Lynn","3":"7.6","4":"0","5":"0","6":"5.7","7":"5","8":"3.3","9":"55.6","10":"0.7"},{"1":"8","2":"Jacob deGrom","3":"7.3","4":"0","5":"0","6":"5.6","7":"4.7","8":"3.1","9":"50.2","10":"0.7"},{"1":"9","2":"Christian Yelich","3":"7.1","4":"7.3","5":"-0.7","6":"5.4","7":"5.2","8":"4.7","9":"57.7","10":"0.5"},{"1":"10","2":"Ketel Marte","3":"6.9","4":"6.6","5":"0.9","6":"5","7":"5.1","8":"4.7","9":"53.9","10":"0.5"},{"1":"","2":"Gerrit Cole","3":"6.9","4":"0","5":"0","6":"5","7":"5","8":"3.5","9":"49.2","10":"0.7"},{"1":"12","2":"Mookie Betts","3":"6.8","4":"5.2","5":"1.1","6":"4.7","7":"5.2","8":"5","9":"45.9","10":"0.5"},{"1":"13","2":"Matt Chapman","3":"6.7","4":"4.8","5":"2.3","6":"4.4","7":"5.1","8":"5","9":"43.4","10":"0.5"},{"1":"14","2":"Trevor Story","3":"6.4","4":"4.9","5":"2.4","6":"4.5","7":"4.9","8":"4.7","9":"48","10":"0.5"},{"1":"15","2":"Anthony Rendon","3":"6.3","4":"6.4","5":"0.3","6":"4.4","7":"5","8":"4.7","9":"47.4","10":"0.5"},{"1":"","2":"Stephen Strasburg","3":"6.3","4":"0","5":"0","6":"4.6","7":"4.7","8":"3.5","9":"41.4","10":"0.6"},{"1":"17","2":"George Springer","3":"6.2","4":"5.1","5":"1","6":"4.4","7":"5.2","8":"5","9":"44.1","10":"0.5"},{"1":"18","2":"Josh Donaldson","3":"6.1","4":"4.7","5":"1.7","6":"4","7":"4.9","8":"4.7","9":"43","10":"0.5"},{"1":"19","2":"DJ LeMahieu","3":"6","4":"5.2","5":"0.9","6":"3.9","7":"5.2","8":"5","9":"38.8","10":"0.5"},{"1":"","2":"Eduardo Rodriguez","3":"6","4":"0","5":"0","6":"4.1","7":"5","8":"3.8","9":"41.5","10":"0.6"},{"1":"21","2":"Jack Flaherty","3":"5.9","4":"0","5":"0","6":"4.3","7":"4.7","8":"3.5","9":"38.7","10":"0.6"},{"1":"22","2":"Max Scherzer","3":"5.8","4":"0","5":"0","6":"4.4","7":"4.7","8":"3.3","9":"39.2","10":"0.7"},{"1":"23","2":"Nolan Arenado","3":"5.7","4":"5","5":"1.1","6":"3.7","7":"4.9","8":"4.7","9":"39.7","10":"0.5"},{"1":"","2":"Max Muncy","3":"5.7","4":"4.6","5":"1.1","6":"3.8","7":"4.9","8":"4.7","9":"41.2","10":"0.5"},{"1":"","2":"Jorge Polanco","3":"5.7","4":"5.4","5":"1","6":"3.5","7":"5.2","8":"5","9":"33.8","10":"0.5"},{"1":"","2":"Mike Soroka","3":"5.7","4":"0","5":"0","6":"4.2","7":"4.7","8":"3.4","9":"38.2","10":"0.6"},{"1":"","2":"Patrick Corbin","3":"5.7","4":"0","5":"0","6":"4","7":"4.7","8":"3.6","9":"36.4","10":"0.6"},{"1":"28","2":"Lucas Giolito","3":"5.6","4":"0","5":"0","6":"4","7":"5","8":"3.6","9":"39.8","10":"0.6"},{"1":"","2":"Sonny Gray","3":"5.6","4":"0","5":"0","6":"4.2","7":"4.7","8":"3.5","9":"37.7","10":"0.6"},{"1":"","2":"Zack Greinke","3":"5.6","4":"0","5":"0","6":"3.8","7":"9.7","8":"7.7","9":"35.7","10":"1.2"},{"1":"31","2":"Ronald Acuna Jr.","3":"5.5","4":"4.8","5":"0.7","6":"3.4","7":"4.9","8":"4.7","9":"37.4","10":"0.5"},{"1":"32","2":"Aaron Judge","3":"5.4","4":"3.4","5":"1.6","6":"3.9","7":"5.2","8":"5","9":"38.8","10":"0.5"},{"1":"33","2":"Rafael Devers","3":"5.3","4":"5.7","5":"-0.1","6":"3","7":"5.2","8":"5","9":"29.3","10":"0.5"},{"1":"34","2":"Xander Bogaerts","3":"5.2","4":"7.1","5":"-1","6":"2.9","7":"5.3","8":"5","9":"28.8","10":"0.5"},{"1":"35","2":"Hyun Jin Ryu","3":"5.1","4":"0","5":"0","6":"3.6","7":"4.7","8":"3.6","9":"32.6","10":"0.6"},{"1":"","2":"Matt Olson","3":"5.1","4":"3.6","5":"0.9","6":"3.2","7":"5.1","8":"5","9":"31.3","10":"0.5"},{"1":"","2":"Charlie Morton","3":"5.1","4":"0","5":"0","6":"3.3","7":"5","8":"4","9":"33.8","10":"0.6"},{"1":"38","2":"Pete Alonso","3":"5","4":"5.8","5":"-1.6","6":"2.9","7":"5","8":"4.7","9":"32.1","10":"0.5"},{"1":"","2":"Jeff McNeil","3":"5","4":"4.6","5":"0.1","6":"3.2","7":"4.9","8":"4.7","9":"34.8","10":"0.5"},{"1":"","2":"Shane Bieber","3":"5","4":"0","5":"0","6":"3","7":"5","8":"4.1","9":"31.7","10":"0.6"},{"1":"41","2":"Javier Baez","3":"4.8","4":"3.3","5":"2.2","6":"3","7":"4.8","8":"4.7","9":"32.2","10":"0.5"},{"1":"","2":"Ozzie Albies","3":"4.8","4":"4.3","5":"1","6":"2.6","7":"4.9","8":"4.7","9":"29.4","10":"0.5"},{"1":"43","2":"Francisco Lindor","3":"4.7","4":"3.7","5":"1.7","6":"2.7","7":"5.1","8":"5","9":"25.4","10":"0.5"},{"1":"","2":"Luis Castillo","3":"4.7","4":"0","5":"0","6":"3.2","7":"4.7","8":"3.8","9":"29","10":"0.6"},{"1":"","2":"Kolten Wong","3":"4.7","4":"3.4","5":"1.7","6":"2.9","7":"4.8","8":"4.7","9":"31.5","10":"0.5"},{"1":"","2":"Juan Soto","3":"4.7","4":"4.7","5":"-0.6","6":"2.7","7":"4.9","8":"4.7","9":"29.7","10":"0.5"},{"1":"47","2":"Yoan Moncada","3":"4.6","4":"5.2","5":"-0.3","6":"2.7","7":"5.2","8":"5","9":"26.5","10":"0.5"},{"1":"","2":"Michael Brantley","3":"4.6","4":"3.6","5":"0.2","6":"2.4","7":"5.1","8":"5","9":"22.5","10":"0.5"},{"1":"49","2":"Nick Ahmed","3":"4.5","4":"2.8","5":"2.6","6":"2.5","7":"4.8","8":"4.7","9":"27.7","10":"0.5"},{"1":"","2":"Carlos Santana","3":"4.5","4":"4.5","5":"-0.8","6":"2.2","7":"5.1","8":"5","9":"20.7","10":"0.5"}],"options":{"columns":{"min":{},"max":[10],"total":[10]},"rows":{"min":[10],"max":[10],"total":[52]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTkFcbiJ9 -->
+<pre><code>NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+
+<div id="rmd-source-code">LS0tCm5hbWU6ICdNb2ppc29sdXdhIChKaXNvKSBBd2UnCnRpdGxlOiAnMjAxOSBXQVIgVmlzdWFsaXphdGlvbnMnCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfSAgCmxpYnJhcnkodGlkeXZlcnNlKSAgICAgIyNsb2FkaW5nIHBhY2thZ2VzCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShkY0RhdGEpCmxpYnJhcnkocnZlc3QpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkobHVicmlkYXRlKQpgYGAKCiNXaW5zIEFib3ZlIFJlcGxhY2VtbnQ/CgpJbiB0aGlzIG5vdGVib29rIHdlIHdpbGwgYmUgZXhhbWluaW5nIHRoZSBhZHZhbmNlZCBzdGF0aXN0aWMgb2YgV2lucyBBYm92ZSBSZXBsYWNlbWVudCAoV0FSKSBmcm9tIHRoZSAyMDE5IE1MQiBzZWFzb24uIAoKQSBzaW1wbGUgZXhwbGFuYXRpb24gb2YgdGhlIFdBUiBzdGF0aXN0aWMgaXMgYSBudW1lcmljYWwgZXhwbGFuYXRpb24gb2YgaG93IG1hbnkgd2lucyAob3IgbG9zcykgYSBwbGF5ZXIgY29udHJpYnV0ZXMgdG8gYSB0ZWFtcyByZWNvcmQuCgpXZSB3aWxsIGV4YW1pbmluZyBwbGF5ZXIgV0FSIGZyb20gdGhlIDIwMTkgc2Vhc29uICh0aGF0IHdhcyB0aGUgbGFzdCBmdWxsIHNlYXNvbiBvZiBkYXRhIHdlIGhhdmUgYXZhaWxhYmxlKSBmcm9tIEVTUE4uY29tCgpgYGB7cn0KcGFnZSA8LSAnaHR0cHM6Ly93d3cuZXNwbi5jb20vbWxiL3dhci9sZWFkZXJzL18vdHlwZS9zZWFzb25hbC95ZWFyLzIwMTknCnRhYmxlIDwtIHBhZ2UgJT4lCiAgcmVhZF9odG1sKCkgJT4lCiAgaHRtbF9ub2Rlcyhjc3MgPSAndGFibGUnKSAlPiUKICBodG1sX3RhYmxlKGZpbGwgPSBUUlVFKQoKdGFibGUKYGBg</div>
 
 
 
