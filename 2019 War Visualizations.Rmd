@@ -17,16 +17,58 @@ library(lubridate)
 
 In this notebook we will be examining the advanced statistic of Wins Above Replacement (WAR) from the 2019 MLB season. 
 
-A simple explanation of the WAR statistic is a numerical explanation of how many wins (or loss) a player contributes to a teams record.
+A simple explanation of the WAR statistic is a number defining the amount of many wins (or loss) a player contributes to a teams record. According to Baseball Reference WAR can be defined as 'a single number that represents the number of wins the player added to the team, above what a replacement player would add'.
 
-We will examining player WAR from the 2019 season (that was the last full season of data we have available) from ESPN.com
+We will examining players WAR from the 2019 season, this was the most recent 162 game season we have data from. This data has been scraped from ESPN.com.
 
 ```{r}
 page <- 'https://www.espn.com/mlb/war/leaders/_/type/seasonal/year/2019'
-table <- page %>%
+tableA <- page %>%
   read_html() %>%
   html_nodes(css = 'table') %>%
   html_table(fill = TRUE)
 
-table
+tableA
 ```
+
+```{r} 
+##creating the right data frame
+WarT <-
+  tableA[[1]]
+
+WarT
+```
+
+```{r}
+##removing the variables from the variables from the dataframe that aren't going to be used
+WarT <-
+  subset(WarT, select = -c(X6:X10))
+WarT
+```
+
+
+
+```{r}
+##renaming variables and removing header cases
+wt <-
+  WarT%>%
+  filter(row_number() > 2) %>%
+  rename( Rank =  `X1` ,
+         Player =  `X2` ,
+         WAR =  `X3`,
+         OFF = `X4`,
+         DEF = `X5`)
+
+wt
+```
+
+
+
+
+
+
+
+
+
+
+
