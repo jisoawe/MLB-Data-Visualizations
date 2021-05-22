@@ -71,26 +71,34 @@ ftable <- editData(table4)
  ##renamed the teams using the editData package
 ```
 ```{r}
-final <- editData(ftable)
+editData(ftable)
 ```
+
+
 ```{r}
+final <- read_csv('postsznT.csv')
+
 final
 ```
 
 
+# World Series Projections
+
 ```{r}
-library(esquisse)
+bg <-
+  final%>%
+  ggplot(aes(x='', y=WSWin, fill= Team)) +
+  geom_bar(width = 1, stat = 'identity') +
+  ylab('WS Percentage')
+
+bg
 ```
 
 
 ```{r}
-esquisser()
+pie <- bg + coord_polar('y', start = 0)
+pie
 ```
-
-
-
-
-
 
 
 
