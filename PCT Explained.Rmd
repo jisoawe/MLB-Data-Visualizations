@@ -6,4 +6,15 @@ output: html_notebook
 
 # What is PCT?
 
-In Major League Baseball Pct is the statistic for winning percentage, typically the third stat presented in data about standings (displayed as a decimal). The higher this percentage, the higher the ratio is between a teams wins and losses. This 
+In Major League Baseball Pct is the statistic for winning percentage, typically the third stat presented in data about standings (displayed as a decimal). The higher this percentage, the higher the ratio is between a teams wins and losses. This statistic is the primary component examined in team rankings.
+
+
+## Calculation
+
+Win Percentage is calculated based on two variables: wins and losses.
+
+
+$$\frac{Wins}{Wins+Losses}$$
+* note Wins + Losses can also be referred to as Games Played (GP)
+
+
