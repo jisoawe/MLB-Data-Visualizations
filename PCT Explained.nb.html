@@ -1762,15 +1762,28 @@ summary {
 <div id="what-is-pct" class="section level1">
 <h1>What is PCT?</h1>
 <p>In Major League Baseball Pct is the statistic for winning percentage, typically the third stat presented in data about standings (displayed as a decimal). The higher this percentage, the higher the ratio is between a teams wins and losses. This statistic is the primary component examined in team rankings.</p>
+<p>The highest Pct. in MLB history was 0.716 from the 2001 Seattle Mariners. In baseball any Pct. above 0.500 is a very big accomplishment.</p>
+<ul>
+<li>despite this amazing season by the Mariners, they haven’t been as lucky any other season and are still the only MLB team to not have a single World Series appearance</li>
+</ul>
 <div id="calculation" class="section level2">
 <h2>Calculation</h2>
-<p>Win Percentage is calculated based on two variables: wins and losses.</p>
-<p><span class="math display">\[\frac{Wins}{Wins+Losses}\]</span> * note Wins + Losses can also be referred to as Games Played (GP)</p>
+<div id="win-percentage-is-calculated-based-on-two-variables-wins-and-losses." class="section level3">
+<h3>Win Percentage is calculated based on two variables: wins and losses.</h3>
+<p><span class="math display">\[\frac{Wins}{Wins+Losses}\]</span></p>
+<ul>
+<li>note: Wins + Losses can also be referred to as Games Played (GP)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="visualization" class="section level1">
+<h1>Visualization</h1>
+<p>This section will be dedicated to visualizations based on different teams winning percentages in different seasons.</p>
 <!-- rnb-text-end -->
 </div>
-</div>
 
-<div id="rmd-source-code">LS0tCm5hbWU6ICdNb2ppc29sdXdhIChKaXNvKSBBd2UnCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBXaGF0IGlzIFBDVD8KCkluIE1ham9yIExlYWd1ZSBCYXNlYmFsbCBQY3QgaXMgdGhlIHN0YXRpc3RpYyBmb3Igd2lubmluZyBwZXJjZW50YWdlLCB0eXBpY2FsbHkgdGhlIHRoaXJkIHN0YXQgcHJlc2VudGVkIGluIGRhdGEgYWJvdXQgc3RhbmRpbmdzIChkaXNwbGF5ZWQgYXMgYSBkZWNpbWFsKS4gVGhlIGhpZ2hlciB0aGlzIHBlcmNlbnRhZ2UsIHRoZSBoaWdoZXIgdGhlIHJhdGlvIGlzIGJldHdlZW4gYSB0ZWFtcyB3aW5zIGFuZCBsb3NzZXMuIFRoaXMgc3RhdGlzdGljIGlzIHRoZSBwcmltYXJ5IGNvbXBvbmVudCBleGFtaW5lZCBpbiB0ZWFtIHJhbmtpbmdzLgoKCiMjIENhbGN1bGF0aW9uCgpXaW4gUGVyY2VudGFnZSBpcyBjYWxjdWxhdGVkIGJhc2VkIG9uIHR3byB2YXJpYWJsZXM6IHdpbnMgYW5kIGxvc3Nlcy4KCgokJFxmcmFje1dpbnN9e1dpbnMrTG9zc2VzfSQkCiogbm90ZSBXaW5zICsgTG9zc2VzIGNhbiBhbHNvIGJlIHJlZmVycmVkIHRvIGFzIEdhbWVzIFBsYXllZCAoR1ApCgoK</div>
+<div id="rmd-source-code">LS0tCm5hbWU6ICdNb2ppc29sdXdhIChKaXNvKSBBd2UnCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBXaGF0IGlzIFBDVD8KCkluIE1ham9yIExlYWd1ZSBCYXNlYmFsbCBQY3QgaXMgdGhlIHN0YXRpc3RpYyBmb3Igd2lubmluZyBwZXJjZW50YWdlLCB0eXBpY2FsbHkgdGhlIHRoaXJkIHN0YXQgcHJlc2VudGVkIGluIGRhdGEgYWJvdXQgc3RhbmRpbmdzIChkaXNwbGF5ZWQgYXMgYSBkZWNpbWFsKS4gVGhlIGhpZ2hlciB0aGlzIHBlcmNlbnRhZ2UsIHRoZSBoaWdoZXIgdGhlIHJhdGlvIGlzIGJldHdlZW4gYSB0ZWFtcyB3aW5zIGFuZCBsb3NzZXMuIFRoaXMgc3RhdGlzdGljIGlzIHRoZSBwcmltYXJ5IGNvbXBvbmVudCBleGFtaW5lZCBpbiB0ZWFtIHJhbmtpbmdzLgoKVGhlIGhpZ2hlc3QgUGN0LiBpbiBNTEIgaGlzdG9yeSB3YXMgMC43MTYgZnJvbSB0aGUgMjAwMSBTZWF0dGxlIE1hcmluZXJzLiBJbiBiYXNlYmFsbCBhbnkgUGN0LiBhYm92ZSAwLjUwMCBpcyBhIHZlcnkgYmlnIGFjY29tcGxpc2htZW50LgoKKiBkZXNwaXRlIHRoaXMgYW1hemluZyBzZWFzb24gYnkgdGhlIE1hcmluZXJzLCB0aGV5IGhhdmVuJ3QgYmVlbiBhcyBsdWNreSBhbnkgb3RoZXIgc2Vhc29uIGFuZCBhcmUgc3RpbGwgdGhlIG9ubHkgTUxCIHRlYW0gdG8gbm90IGhhdmUgYSBzaW5nbGUgV29ybGQgU2VyaWVzIGFwcGVhcmFuY2UKCgojIyBDYWxjdWxhdGlvbgoKIyMjIFdpbiBQZXJjZW50YWdlIGlzIGNhbGN1bGF0ZWQgYmFzZWQgb24gdHdvIHZhcmlhYmxlczogd2lucyBhbmQgbG9zc2VzLgoKCiQkXGZyYWN7V2luc317V2lucytMb3NzZXN9JCQKCiogbm90ZTogV2lucyArIExvc3NlcyBjYW4gYWxzbyBiZSByZWZlcnJlZCB0byBhcyBHYW1lcyBQbGF5ZWQgKEdQKQoKIyBWaXN1YWxpemF0aW9uCgpUaGlzIHNlY3Rpb24gd2lsbCBiZSBkZWRpY2F0ZWQgdG8gdmlzdWFsaXphdGlvbnMgYmFzZWQgb24gZGlmZmVyZW50IHRlYW1zIHdpbm5pbmcgcGVyY2VudGFnZXMgaW4gZGlmZmVyZW50IHNlYXNvbnMuCg==</div>
 
 
 
