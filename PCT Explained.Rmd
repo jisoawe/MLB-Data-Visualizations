@@ -1,0 +1,9 @@
+---
+name: 'Mojisoluwa (Jiso) Awe'
+title: "R Notebook"
+output: html_notebook
+---
+
+# What is PCT?
+
+In Major League Baseball Pct is the statistic for winning percentage, typically the third stat presented in data about standings (displayed as a decimal). The higher this percentage, the higher the ratio is between a teams wins and losses. This 
