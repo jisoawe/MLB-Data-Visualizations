@@ -25,3 +25,55 @@ $$\frac{Wins}{Wins+Losses}$$
 # Visualization
 
 This section will be dedicated to visualizations based on different teams winning percentages in different seasons.
+
+Data provided by:
+<ahref="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool">Baseball-Reference.com</a>: <a href="https://www.baseball-reference.com/teams/tgl.cgi?team=WSN&t=b&year=2019&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#team_batting_gamelogs">View Original Table</a><br>Generated 5/23/2021.
+
+
+```{r}
+library(tidyverse) ## loading packages
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(taRifx)
+```
+
+
+```{r}
+nats19 <- read_csv('nats pct 2019 table.csv')  #importing the data
+nats19
+```
+
+
+```{r}
+losses <-  ##filtering the teams losses
+  nats19 %>%
+  filter(grepl('^L', Rslt))
+
+losses
+```
+
+```{r}
+losses$Rslt <-
+  gsub('L', '', as.character(losses$Rslt))
+
+losses
+```
+
+
+```{r}
+a <- '1+2+8'
+
+b = destring(a)
+
+b
+```
+
+
+```{r}
+test <- "50,762.83a"
+destring(test)
+```
+
+
+
