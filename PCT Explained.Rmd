@@ -46,7 +46,7 @@ nats19
 
 
 ```{r}
-losses <-  ##filtering the teams losses
+losses <-  ##filtering the games when the team lost this season
   nats19 %>%
   filter(grepl('^L', Rslt))
 
@@ -54,25 +54,36 @@ losses
 ```
 
 ```{r}
-losses$Rslt <-
+losses$Rslt <-   ##removing the L from Rslt column
   gsub('L', '', as.character(losses$Rslt))
 
 losses
 ```
 
 
+
 ```{r}
-a <- '1+2+8'
+y <- losses$Rslt    ##creating a margin column based on how badly the team lost
 
-b = destring(a)
+LossT <-
+  losses %>%
+  mutate(Margin = sapply(y, function(txt) eval(parse(text=txt))))
 
-b
+LossT
 ```
 
+## Loss Margin
+
 
 ```{r}
-test <- "50,762.83a"
-destring(test)
+GameOut <-
+  LossT %>%
+  ggplot(aes(x = Rk, y = Margin, fill = Opp)) +
+  geom_bar(stat = 'identity') +
+  xlab('Game') +
+  ylab('Margin')
+
+GameOut
 ```
 
 
