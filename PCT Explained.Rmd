@@ -22,14 +22,6 @@ $$\frac{Wins}{Wins+Losses}$$
 
 * note: Wins + Losses can also be referred to as Games Played (GP)
 
-## Visualizations
-
-This section will be dedicated to visualizations based on different teams winning percentages in different seasons.
-
-Data provided by:
-<ahref="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool"> 
-Baseball-Reference.com</a>: <ahref="https://www.baseball-reference.com/teams/tgl.cgi?team=WSN&t=b&year=2019&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#team_batting_gamelogs"> 
-View Original Table</a><br>Generated 5/23/2021.
 
 
 ```{r}
@@ -41,11 +33,80 @@ library(taRifx)
 ```
 
 
+## The Value of Losses
+
+Due to the nature of how win percentage is calculated the more losses a team incurs the more the lower their win percentage, conversely the same rule applies.
+
+#### Example
+
+
+If a team plays 16 games in their season and they won 12 of the games and lost the remaining 4, their win percentage would be 0.750
+
+
+
+$$\frac{Wins}{Wins+Losses} = \frac{12}{12+4} = \frac{12}{16} = 0.750$$
+
+
+Now suppose another team in the league that won 7 of their games and lost the remaining 9, their win percentage would be 0.4375 which rounds to 0.438 (statistics in the MLB are typically displayed with 3 digits following the decimal place).
+
+
+$$\frac{7}{7+9} = \frac{7}{16} = 0.4375 ≈ 0.438 $$
+### Current MLB Pct's
+
+Data Provided from Baseball-Reference.com on June 5th
+
+http://bbref.com/pi/shareit/SK2dx
+
+```{r}
+szn2021 <- read_csv('21seasonstandings.csv')
+szn2021
+```
+
+
+```{r}
+szn21 <-   ## renaming the w-l% column
+  szn2021 %>%
+  rename(Pct =  `W-L%`)
+szn21
+```
+
+
+```{r}
+wpg <-
+  szn21 %>%
+  ggplot(aes(x= Tm, y= Pct, fill = Lg)) +
+  geom_bar(stat = 'identity') +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_fill_brewer(palette = 'Set1') +
+  xlab('Team') +
+  ylab('Win Percentage') 
+
+wpg
+```
+
+### What This Means
+
+The graph displayed above highlights each teams win percentage thus far in the season. It can be seen that of the teams in the National League (NL), the San Francisco Giants, San Diego Padres, and the Los Angeles Dodgers have the highest percentages. Meanwhile in the American League (AL) the teams with the highest percentages are the Tampa Bay Rays, Chicago White Sox, and Boston Red Sox. This graph and statistics can make it appear as if these are the best teams in the MLB, which to some extent is true, that isn't the full story.
+
+There are many factors that play into how well a team performs during the season, such as their strength of schedule.
+
+
+
+## Loss Margin
+
+Another way to access how well a team is performing is by examining their loss margin. Here we will be looking at data from the Washington Nationals 2019 season. We will be looking at this data because this was the last 162 game season we have available and the Nationals won the World Series that year aswell.
+
+
+Data provided by:
+<ahref="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool"> 
+Baseball-Reference.com</a>: <ahref="https://www.baseball-reference.com/teams/tgl.cgi?team=WSN&t=b&year=2019&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#team_batting_gamelogs"> 
+View Original Table</a><br>Generated 5/23/2021.
+
+
 ```{r}
 nats19 <- read_csv('nats pct 2019 table.csv')  #importing the data
 nats19
 ```
-
 
 
 ```{r}
@@ -55,6 +116,7 @@ losses <-  ##filtering the games when the team lost this season
 
 losses
 ```
+
 
 ```{r}
 losses$Rslt <-   ##removing the L from Rslt column
@@ -75,67 +137,17 @@ LossT <-
 LossT
 ```
 
-## The Value of Losses
-
-Due to the nature of how win percentage is calculated the more losses a team incurs the more the lower their win percentage, conversely the same rule applies.
-
-#### Example
-
-
-If a team plays 16 games in their season and they won 12 of the games and lost the remaining 4, their win percentage would be 0.750
-
-
-
-$$\frac{Wins}{Wins+Losses} = \frac{12}{12+4} = \frac{12}{16} = 0.750$$
-
-
-Now suppose another team in the league that won 7 of their games and lost the remaining 9, their win percentage would be 0.4375 which rounds to 0.438 (statistics in the MLB are typically displayed with 3 digits following the decimal place).
-
-
-$$\frac{7}{7+9} = \frac{7}{16} = 0.4375 ≈ 0.438 $$
-### Current League Standings
-
-Data Provided from Baseball-Reference.com
-
-http://bbref.com/pi/shareit/SK2dx
-
-```{r}
-szn2021 <- read_csv('21seasonstandings.csv')
-szn2021
-```
 
 
 ```{r}
-szn21 <-
-  szn2021 %>%
-  rename(Pct =  `W-L%`)
-szn21
-```
-
-
-```{r}
-wpg <-
-  szn21 %>%
-  ggplot(aes(x= Tm, y= Pct, fill = Lg)) +
-  geom_bar(stat = 'identity') +
-  theme(axis.text.x = element_text(angle = 90))
-
-wpg
-```
-
-
-
-## Loss Margin
-
-```{r}
-GameOut <-
+LossM <-
   LossT %>%
   ggplot(aes(x = Rk, y = Margin, fill = Opp)) +
   geom_bar(stat = 'identity') +
-  xlab('Game') +
-  ylab('Margin')
+  xlab('Game Number') +
+  ylab('Loss Margin')
 
-GameOut
+LossM
 ```
 
 
