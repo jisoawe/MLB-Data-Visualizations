@@ -86,9 +86,9 @@ wpg
 
 ### What This Means
 
-The graph displayed above highlights each teams win percentage thus far in the season. It can be seen that of the teams in the National League (NL), the San Francisco Giants, San Diego Padres, and the Los Angeles Dodgers have the highest percentages. Meanwhile in the American League (AL) the teams with the highest percentages are the Tampa Bay Rays, Chicago White Sox, and Boston Red Sox. This graph and statistics can make it appear as if these are the best teams in the MLB, which to some extent is true, that isn't the full story.
+The graph displayed above highlights each teams win percentage thus far in the season. It can be seen that of the teams in the National League (NL), the San Francisco Giants, San Diego Padres, and the Los Angeles Dodgers have the highest percentages. Meanwhile in the American League (AL) the teams with the highest percentages are the Tampa Bay Rays, Chicago White Sox, and Boston Red Sox. This graph and statistics can make it appear as if these are the best teams in the MLB, which to some extent is true, that isn't the full story. For example in 2019 the Washington Nationals had an overall Pct of 0.574, but still won the World Series.
 
-There are many factors that play into how well a team performs during the season, such as their strength of schedule.
+This shows that are many factors that play into how well a team performs during the season, such as their strength of schedule.
 
 
 
