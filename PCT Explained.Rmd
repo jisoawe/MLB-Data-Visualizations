@@ -15,19 +15,21 @@ The highest Pct. in MLB history was 0.716 from the 2001 Seattle Mariners. In bas
 
 ## Calculation
 
-### Win Percentage is calculated based on two variables: wins and losses.
+#### Win Percentage is calculated based on two variables: wins and losses.
 
 
 $$\frac{Wins}{Wins+Losses}$$
 
 * note: Wins + Losses can also be referred to as Games Played (GP)
 
-# Visualization
+## Visualizations
 
 This section will be dedicated to visualizations based on different teams winning percentages in different seasons.
 
 Data provided by:
-<ahref="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool">Baseball-Reference.com</a>: <a href="https://www.baseball-reference.com/teams/tgl.cgi?team=WSN&t=b&year=2019&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#team_batting_gamelogs">View Original Table</a><br>Generated 5/23/2021.
+<ahref="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool"> 
+Baseball-Reference.com</a>: <ahref="https://www.baseball-reference.com/teams/tgl.cgi?team=WSN&t=b&year=2019&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#team_batting_gamelogs"> 
+View Original Table</a><br>Generated 5/23/2021.
 
 
 ```{r}
@@ -43,6 +45,7 @@ library(taRifx)
 nats19 <- read_csv('nats pct 2019 table.csv')  #importing the data
 nats19
 ```
+
 
 
 ```{r}
@@ -72,8 +75,57 @@ LossT <-
 LossT
 ```
 
-## Loss Margin
+## The Value of Losses
 
+Due to the nature of how win percentage is calculated the more losses a team incurs the more the lower their win percentage, conversely the same rule applies.
+
+#### Example
+
+
+If a team plays 16 games in their season and they won 12 of the games and lost the remaining 4, their win percentage would be 0.750
+
+
+
+$$\frac{Wins}{Wins+Losses} = \frac{12}{12+4} = \frac{12}{16} = 0.750$$
+
+
+Now suppose another team in the league that won 7 of their games and lost the remaining 9, their win percentage would be 0.4375 which rounds to 0.438 (statistics in the MLB are typically displayed with 3 digits following the decimal place).
+
+
+$$\frac{7}{7+9} = \frac{7}{16} = 0.4375 ≈ 0.438 $$
+### Current League Standings
+
+Data Provided from Baseball-Reference.com
+
+http://bbref.com/pi/shareit/SK2dx
+
+```{r}
+szn2021 <- read_csv('21seasonstandings.csv')
+szn2021
+```
+
+
+```{r}
+szn21 <-
+  szn2021 %>%
+  rename(Pct =  `W-L%`)
+szn21
+```
+
+
+```{r}
+wpg <-
+  szn21 %>%
+  ggplot(aes(x= Tm, y= Pct, fill = Lg)) +
+  geom_bar(stat = 'identity') +
+  theme(axis.text.x = element_text(angle = 90))
+
+wpg
+```
+
+
+
+## Loss Margin
 
 ```{r}
 GameOut <-
