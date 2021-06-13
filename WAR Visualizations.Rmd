@@ -1,0 +1,76 @@
+---
+name: 'Mojisoluwa (Jiso) Awe'
+title: 'WAR Visualizations'
+output: html_notebook
+---
+
+```{r}  
+library(tidyverse)     ##loading packages
+library(ggplot2)
+library(dcData)
+library(rvest)
+library(dplyr)
+library(lubridate)
+```
+
+#Wins Above Replacemnt?
+
+In this notebook we will be examining the advanced statistic of Wins Above Replacement (WAR) from the 2019 MLB season. 
+
+The WAR is one of the most important advanced statistics in baseball. When examining how a player is doing the referenced stats are typically RBI (runs batted in) and / or ERA (earned run average). While stats like these do provide valuable information, they are dependent on the players position. WAR is a more representative statistics of how well a player is performing. WAR is a number defining the amount of many wins (or losses) a player contributes to a teams record. WAR is read as a whole number or integer, meaning that a players WAR can be negative. A negative WAR denotes an overall contribution of losses by that player. According to Baseball Reference WAR can be defined as 'a single number that represents the number of wins the player added to the team, above what a replacement player would add'.
+
+We will examining players WAR from the 2019 season, this was the most recent 162 game season we have data from. This data has been scraped from ESPN.com.
+
+
+
+```{r}
+page <- 'https://www.espn.com/mlb/war/leaders/_/type/seasonal/year/2019'
+tableA <- page %>%
+  read_html() %>%
+  html_nodes(css = 'table') %>%
+  html_table(fill = TRUE)
+
+tableA
+```
+
+```{r} 
+##creating the right data frame
+WarT <-
+  tableA[[1]]
+
+WarT
+```
+
+```{r}
+##removing the variables from the variables from the dataframe that aren't going to be used
+WarT <-
+  subset(WarT, select = -c(X6:X10))
+WarT
+```
+
+
+
+```{r}
+##renaming variables and removing header cases
+wt <-
+  WarT%>%
+  filter(row_number() > 2) %>%
+  rename( Rank =  `X1` ,
+         Player =  `X2` ,
+         WAR =  `X3`,
+         OFF = `X4`,
+         DEF = `X5`)
+
+wt
+```
+
+
+# What The Numbers Mean
+
+
+
+
+
+
+
+
