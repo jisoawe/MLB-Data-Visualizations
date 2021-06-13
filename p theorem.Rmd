@@ -1,0 +1,17 @@
+---
+title: "Pythagorean Theorem of Baseball"
+author: 'Mojisoluwa (Jiso) Awe'
+output: html_notebook
+---
+
+#Pythagorean Theorem of Baseball
+
+
+equation
+
+$$\frac{wins ^2}{wins^2 + losses^2}$$
+
+```{r}
+
+```
+
