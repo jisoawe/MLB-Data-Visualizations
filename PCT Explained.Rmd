@@ -1,6 +1,6 @@
 ---
 name: 'Mojisoluwa (Jiso) Awe'
-title: "R Notebook"
+title: "PCT Explained"
 output: html_notebook
 ---
 
@@ -10,7 +10,7 @@ In Major League Baseball Pct is the statistic for winning percentage, typically 
 
 The highest Pct. in MLB history was 0.716 from the 2001 Seattle Mariners. In baseball any Pct. above 0.500 is a very big accomplishment.
 
-* despite this amazing season by the Mariners, they haven't been as lucky any other season and are still the only MLB team to not have a single World Series appearance
+* despite this amazing season, the Mariners have never appeared a World Series
 
 
 ## Calculation
@@ -51,6 +51,7 @@ Now suppose another team in the league that won 7 of their games and lost the re
 
 
 $$\frac{7}{7+9} = \frac{7}{16} = 0.4375 ≈ 0.438 $$
+
 ### Current MLB Pct's
 
 Data Provided from Baseball-Reference.com on June 5th
@@ -91,10 +92,29 @@ The graph displayed above highlights each teams win percentage thus far in the s
 This shows that are many factors that play into how well a team performs during the season, such as their strength of schedule.
 
 
+## Strength of Schedule
 
-## Loss Margin
+```{r}
+sosg <-
+  szn21 %>%
+  ggplot(aes(x= Tm, y= SOS, fill = Lg)) +
+  geom_bar(stat = 'identity') +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_fill_brewer(palette = 'Set1') +
+  xlab('Team') +
+  ylab('Strength of Schedule') 
 
-Another way to access how well a team is performing is by examining their loss margin. Here we will be looking at data from the Washington Nationals 2019 season. We will be looking at this data because this was the last 162 game season we have available and the Nationals won the World Series that year aswell.
+sosg
+```
+### What This Means
+This graph displays each teams strength of schedule (SOS) during the 2021 season. The SOS statistic is a constant through all major league sports and evaluates the competitiveness of a teams opponents throughout the season. When the SOS is positive, that means the opponents a team will be facing that season are more difficult. Yet, when a teams is negative, that indicates that their opponents will be less skilled than them. If a team has a SOS of zero, that means that their opponents that season are evenly skilled.
+
+
+## Win & Loss Margins
+
+Another way to further examine how well a team is performing is by examining their loss and win margins. These numbers detail how many runs a team won or lost by. This is important because it can help to further differentiate lucky teams from the good teams.
+
+Here we will be looking at data from the Washington Nationals 2019 season. We will be looking at this data because this was the last 162 game season we have available and the Nationals won the World Series that year.
 
 
 Data provided by:
@@ -114,11 +134,6 @@ losses <-  ##filtering the games when the team lost this season
   nats19 %>%
   filter(grepl('^L', Rslt))
 
-losses
-```
-
-
-```{r}
 losses$Rslt <-   ##removing the L from Rslt column
   gsub('L', '', as.character(losses$Rslt))
 
@@ -128,11 +143,11 @@ losses
 
 
 ```{r}
-y <- losses$Rslt    ##creating a margin column based on how badly the team lost
+y <- losses$Rslt    
 
 LossT <-
-  losses %>%
-  mutate(Margin = sapply(y, function(txt) eval(parse(text=txt))))
+  losses %>%   ##creating a margin column based on how badly the team lost
+  mutate(LMargin = sapply(y, function(txt) eval(parse(text=txt))))
 
 LossT
 ```
@@ -140,15 +155,69 @@ LossT
 
 
 ```{r}
-LossM <-
+LM <-  ##creating the graph
   LossT %>%
-  ggplot(aes(x = Rk, y = Margin, fill = Opp)) +
-  geom_bar(stat = 'identity') +
-  xlab('Game Number') +
+  ggplot(aes(x = Rk, y = LMargin, fill = Opp)) +
+  geom_bar(stat = 'identity') +  ##bar graph
+  xlab('Game Number') +  ##labels
   ylab('Loss Margin')
 
-LossM
+LM
 ```
+
+
+## Win Margin
+
+```{r}
+wins <-  ##filtering the wins from the nats19 table
+  nats19 %>%
+  filter(grepl('^W', Rslt))
+
+wins
+```
+
+```{r}
+wins$Rslt <-  
+  gsub('W', '', as.character(wins$Rslt))  ##removing the W from Rslt column
+
+x <- wins$Rslt
+
+winT <-   ##creating the win margin column
+  wins%>%
+  mutate(WMargin = sapply(x, function(txt) eval(parse(text=txt))))
+
+winT
+```
+
+
+
+```{r}
+wmgr <-  ##win margin graph
+  winT %>%
+  ggplot(aes(x= Gtm, y= WMargin, fill = Opp)) +
+  geom_bar(stat = 'identity') +
+  xlab('Game Number') +
+  ylab('Win Margin')
+
+wmgr
+```
+
+
+```{r}
+idkyet <-
+  nats19 %>%
+  ggplot(aes(x= Gtm, y=BA, fill = Rslt)) +
+  geom_point()
+
+idkyet
+```
+
+
+
+
+
+
+
 
 
 
