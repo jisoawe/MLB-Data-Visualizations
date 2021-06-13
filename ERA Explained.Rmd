@@ -1,0 +1,14 @@
+---
+author: 'Mojisoluwa (Jiso) Awe'
+title: "ERA Explained"
+output: html_notebook
+---
+
+## What is ERA?
+
+Earned Run Average (ERA) is a measure of how many runs a pitcher gives up during a game.
+
+
+
+
+
