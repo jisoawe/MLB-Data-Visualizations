@@ -4,7 +4,7 @@ title: "PCT Explained"
 output: html_notebook
 ---
 
-# What is PCT?
+# What is Pct?
 
 In Major League Baseball Pct is the statistic for winning percentage, typically the third stat presented in data about standings (displayed as a decimal). The higher this percentage, the higher the ratio is between a teams wins and losses. This statistic is the primary component examined in team rankings.
 
@@ -203,14 +203,7 @@ wmgr
 ```
 
 
-```{r}
-idkyet <-
-  nats19 %>%
-  ggplot(aes(x= Gtm, y=BA, fill = Rslt)) +
-  geom_point()
 
-idkyet
-```
 
 
 
