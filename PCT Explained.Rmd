@@ -6,7 +6,7 @@ output: html_notebook
 
 # What is Pct?
 
-In Major League Baseball Pct is the statistic for winning percentage, typically the third stat presented in data about standings (displayed as a decimal). The higher this percentage, the higher the ratio is between a teams wins and losses. This statistic is the primary component examined in team rankings.
+In Major League Baseball Pct is the statistic for a teams win percentage, typically the third stat presented in data about standings (displayed as a decimal). The higher this percentage, the higher the ratio is between a teams wins and losses. This statistic determines teams standing within their division and the league.
 
 The highest Pct. in MLB history was 0.716 from the 2001 Seattle Mariners. In baseball any Pct. above 0.500 is a very big accomplishment.
 
@@ -35,7 +35,7 @@ library(taRifx)
 
 ## The Value of Losses
 
-Due to the nature of how win percentage is calculated the more losses a team incurs the more the lower their win percentage, conversely the same rule applies.
+Due to the nature of how win percentage is calculated the more losses a team incurs the more the lower their win percentage, and conversely the same rule applies.
 
 #### Example
 
@@ -165,6 +165,8 @@ LM <-  ##creating the graph
 LM
 ```
 
+This graph displays each game the team lost that season and how many runs they lost by. The different colors are associated with what team they lost to.
+
 
 ## Win Margin
 
@@ -190,7 +192,6 @@ winT
 ```
 
 
-
 ```{r}
 wmgr <-  ##win margin graph
   winT %>%
@@ -203,12 +204,7 @@ wmgr
 ```
 
 
-
-
-
-
-
-
+This graph displays each game the Nationals won during thw 2019 season and by how many runs they won by. Similar to the previous graph the color of the bar is determined by what team they played during that game.
 
 
 
