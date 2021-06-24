@@ -4,9 +4,28 @@ title: "ERA Explained"
 output: html_notebook
 ---
 
-## What is ERA?
+# What is ERA?
 
-Earned Run Average (ERA) is a measure of how many runs a pitcher gives up during a game.
+Earned Run Average (ERA) is a measure of the average amount runs a pitcher gives up during a game. The higher a pitchers ERA, the more runs a pitcher has given up. ERA is traditionally a go to way of analyzing a pitchers effectiveness. In this notebook we will be analyzing different pitchers ERA's and some additional factors that can influence them.
+
+
+
+
+### Calculation 
+
+
+
+
+
+$$\frac {9*Earned Runs}{Innings Pitched}$$
+
+
+
+```{r}
+library(ggplot2)   ##loading libraries
+library(dplyr)
+library(tidyverse)
+```
 
 
 
