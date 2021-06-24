@@ -7,9 +7,9 @@ output: html_notebook
 #Pythagorean Theorem of Baseball
 
 
-equation
+#Calculation
 
-$$\frac{wins ^2}{wins^2 + losses^2}$$
+$$ Pct =  \frac{runs scored ^2}{runs scored^2 + runs allowed^2}$$
 
 ```{r}
 
