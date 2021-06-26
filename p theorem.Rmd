@@ -18,6 +18,13 @@ Data from Baseball Reference . com
  Provided by <a href="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool">Baseball-Reference.com</a>: <a href="https://www.baseball-reference.com/leagues/majors/2019.shtml?sr&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#teams_standard_pitching">View Original Table</a><br>Generated 6/26/2021.
 
 
+```{r}
+stats18 <-
+  read.csv('mlbpitchdata2018.csv')
+stats18
+```
+
+
 
 ```{r}
 stats19 <-
