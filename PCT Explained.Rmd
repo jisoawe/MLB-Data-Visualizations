@@ -160,7 +160,28 @@ LM <-  ##creating the graph
   ggplot(aes(x = Rk, y = LMargin, fill = Opp)) +
   geom_bar(stat = 'identity') +  ##bar graph
   xlab('Game Number') +  ##labels
-  ylab('Loss Margin')
+  ylab('Loss Margin') +
+  scale_fill_manual(values = c('ATL' = '#0D47A1',
+                               'ARI' = '#D32F2F',
+                               'BAL' = '#E65100',
+                               'CHC' = '#1A237E',
+                               'CHW' = 'black',
+                               'CIN' = '#EF5350',
+                               'CLE' = '#1E88E5',
+                               'COL' = '#311B92',
+                               'DET' = '#FF8A65', 
+                               'KCR' = '#9FA8DA', 
+                               'LAD'= '#0277BD',
+                               'MIA'= '#4DD0E1',
+                               'MIL'= '#FFD54F',
+                               'MIN'= '#283593',
+                               'NYM' = '#00BCD4',
+                               'PHI'= '#F44336',
+                               'PIT'= '#FFEE58',
+                               'SDP' = '#3E2723',
+                               'SFG'= '#FF9800',
+                               'STL'= '#26A69A'
+                               ))
 
 LM
 ```
@@ -198,7 +219,28 @@ wmgr <-  ##win margin graph
   ggplot(aes(x= Gtm, y= WMargin, fill = Opp)) +
   geom_bar(stat = 'identity') +
   xlab('Game Number') +
-  ylab('Win Margin')
+  ylab('Win Margin') +
+  scale_fill_manual(values = c('ATL' = '#0D47A1',
+                               'ARI' = '#D32F2F',
+                               'BAL' = '#E65100',
+                               'CHC' = '#1A237E',
+                               'CHW' = 'black',
+                               'CIN' = '#EF5350',
+                               'CLE' = '#1E88E5',
+                               'COL' = '#512DA8',
+                               'DET' = '#FF8A65', 
+                               'KCR' = '#9FA8DA', 
+                               'LAD'= '#0277BD',
+                               'MIA'= '#4DD0E1',
+                               'MIL'= '#FFD54F',
+                               'MIN'= '#283573',
+                               'NYM' = '#00BCD4',
+                               'PHI'= '#F44336',
+                               'PIT'= '#FFEE58',
+                               'SDP' = '#5d4037',
+                               'SFG'= '#FF9800',
+                               'STL'= '#26A69A'
+                               ))
 
 wmgr
 ```
