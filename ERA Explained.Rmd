@@ -10,7 +10,6 @@ Earned Run Average (ERA) is a measure of the average amount runs a pitcher gives
 
 
 
-
 ### Calculation 
 
 
@@ -28,6 +27,11 @@ library(tidyverse)
 ```
 
 
+```{r}
+spin <-
+  read.csv('active-spin.csv')
+spin
+```
 
 
 
