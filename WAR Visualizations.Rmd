@@ -4,16 +4,7 @@ title: 'WAR Visualizations'
 output: html_notebook
 ---
 
-```{r}  
-library(tidyverse)     ##loading packages
-library(ggplot2)
-library(dcData)
-library(rvest)
-library(dplyr)
-library(lubridate)
-```
-
-#Wins Above Replacemnt?
+# Wins Above Replacemnt?
 
 In this notebook we will be examining the advanced statistic of Wins Above Replacement (WAR) from the 2019 MLB season. 
 
@@ -21,10 +12,23 @@ The WAR is one of the most important advanced statistics in baseball. When exami
 
 We will examining players WAR from the 2019 season, this was the most recent 162 game season we have data from. This data has been scraped from ESPN.com.
 
+futher explanation: https://www.baseball-reference.com/about/war_explained.shtml
+
+
+### Calculation
+
+$$\frac {BA +BR + FR + PosAdj + LgAdj + ReplaceRuns}{RPW} $$
+
+
+```{r}  
+library(tidyverse)     ##loading packages
+library(ggplot2)
+library(dplyr)
+```
 
 
 ```{r}
-page <- 'https://www.espn.com/mlb/war/leaders/_/type/seasonal/year/2019'
+page <- 'https://www.espn.com/mlb/stats/player/_/view/batting/table/batting/sort/hits/dir/desc'
 tableA <- page %>%
   read_html() %>%
   html_nodes(css = 'table') %>%
@@ -33,39 +37,11 @@ tableA <- page %>%
 tableA
 ```
 
-```{r} 
-##creating the right data frame
-WarT <-
-  tableA[[1]]
-
-WarT
-```
-
-```{r}
-##removing the variables from the variables from the dataframe that aren't going to be used
-WarT <-
-  subset(WarT, select = -c(X6:X10))
-WarT
-```
 
 
 
-```{r}
-##renaming variables and removing header cases
-wt <-
-  WarT%>%
-  filter(row_number() > 2) %>%
-  rename( Rank =  `X1` ,
-         Player =  `X2` ,
-         WAR =  `X3`,
-         OFF = `X4`,
-         DEF = `X5`)
-
-wt
-```
 
 
-# What The Numbers Mean
 
 
 
