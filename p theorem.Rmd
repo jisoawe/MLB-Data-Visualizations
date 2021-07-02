@@ -4,10 +4,11 @@ author: 'Mojisoluwa (Jiso) Awe'
 output: html_notebook
 ---
 
-#Pythagorean Theorem of Baseball
+# What is the Theorem?
+This theorem was derived with the goal of predicting a teams win percentage for the following season based on the runs scored and allowed during their previous season. It is called the pythagorean theorem of baseball because it's based of the originial pythagorean theorem utilized to solve for the hypotenuse of a triangle.
 
 
-#Calculation
+## Calculation
 
 $$ Pct =  \frac{runs scored ^2}{runs scored^2 + runs allowed^2}$$
 
@@ -16,6 +17,14 @@ $$ Pct =  \frac{runs scored ^2}{runs scored^2 + runs allowed^2}$$
 
 Data from Baseball Reference . com
  Provided by <a href="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool">Baseball-Reference.com</a>: <a href="https://www.baseball-reference.com/leagues/majors/2019.shtml?sr&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#teams_standard_pitching">View Original Table</a><br>Generated 6/26/2021.
+
+* note: I will be examining the run data from the 2018 and 2019 seasons, due to the 2020 season being shortened following the COVID-19 pandemic
+
+```{r}
+library(ggplot2)   ##loading libraries
+library(dplyr)
+library(tidyverse)
+```
 
 
 ```{r}

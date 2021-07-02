@@ -1761,12 +1761,28 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<p>#Pythagorean Theorem of Baseball</p>
-<p>#Calculation</p>
+<div id="what-is-the-theorem" class="section level1">
+<h1>What is the Theorem?</h1>
+<p>This theorem was derived with the goal of predicting a teams win percentage for the following season based on the runs scored and allowed during their previous season. It is called the pythagorean theorem of baseball because it’s based of the originial pythagorean theorem utilized to solve for the hypotenuse of a triangle.</p>
+<div id="calculation" class="section level2">
+<h2>Calculation</h2>
 <p><span class="math display">\[ Pct =  \frac{runs scored ^2}{runs scored^2 + runs allowed^2}\]</span></p>
+</div>
 <div id="theorem-for-2019-teams" class="section level2">
 <h2>Theorem for 2019 Teams</h2>
 <p>Data from Baseball Reference . com Provided by <a href="https://www.sports-reference.com/sharing.html?utm_source=direct&amp;utm_medium=Share&amp;utm_campaign=ShareTool">Baseball-Reference.com</a>: <a href="https://www.baseball-reference.com/leagues/majors/2019.shtml?sr&amp;utm_source=direct&amp;utm_medium=Share&amp;utm_campaign=ShareTool#teams_standard_pitching">View Original Table</a><br>Generated 6/26/2021.</p>
+<ul>
+<li>note: I will be examining the run data from the 2018 and 2019 seasons, due to the 2020 season being shortened following the COVID-19 pandemic</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKSAgICMjbG9hZGluZyBsaWJyYXJpZXNcbmxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmBgYCJ9 -->
+<pre class="r"><code>library(ggplot2)   ##loading libraries
+library(dplyr)
+library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RhdHMxOCA8LVxuICByZWFkLmNzdignbWxicGl0Y2hkYXRhMjAxOC5jc3YnKVxuc3RhdHMxOFxuYGBgIn0= -->
@@ -1804,8 +1820,9 @@ stats19</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUHl0aGFnb3JlYW4gVGhlb3JlbSBvZiBCYXNlYmFsbCIKYXV0aG9yOiAnTW9qaXNvbHV3YSAoSmlzbykgQXdlJwpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojUHl0aGFnb3JlYW4gVGhlb3JlbSBvZiBCYXNlYmFsbAoKCiNDYWxjdWxhdGlvbgoKJCQgUGN0ID0gIFxmcmFje3J1bnMgc2NvcmVkIF4yfXtydW5zIHNjb3JlZF4yICsgcnVucyBhbGxvd2VkXjJ9JCQKCgojIyBUaGVvcmVtIGZvciAyMDE5IFRlYW1zCgpEYXRhIGZyb20gQmFzZWJhbGwgUmVmZXJlbmNlIC4gY29tCiBQcm92aWRlZCBieSA8YSBocmVmPSJodHRwczovL3d3dy5zcG9ydHMtcmVmZXJlbmNlLmNvbS9zaGFyaW5nLmh0bWw/dXRtX3NvdXJjZT1kaXJlY3QmdXRtX21lZGl1bT1TaGFyZSZ1dG1fY2FtcGFpZ249U2hhcmVUb29sIj5CYXNlYmFsbC1SZWZlcmVuY2UuY29tPC9hPjogPGEgaHJlZj0iaHR0cHM6Ly93d3cuYmFzZWJhbGwtcmVmZXJlbmNlLmNvbS9sZWFndWVzL21ham9ycy8yMDE5LnNodG1sP3NyJnV0bV9zb3VyY2U9ZGlyZWN0JnV0bV9tZWRpdW09U2hhcmUmdXRtX2NhbXBhaWduPVNoYXJlVG9vbCN0ZWFtc19zdGFuZGFyZF9waXRjaGluZyI+VmlldyBPcmlnaW5hbCBUYWJsZTwvYT48YnI+R2VuZXJhdGVkIDYvMjYvMjAyMS4KCgpgYGB7cn0Kc3RhdHMxOCA8LQogIHJlYWQuY3N2KCdtbGJwaXRjaGRhdGEyMDE4LmNzdicpCnN0YXRzMTgKYGBgCgoKCmBgYHtyfQpzdGF0czE5IDwtCiAgcmVhZC5jc3YoJ21sYnBpdGNoaW5nZGF0YTIwMTkuY3N2JykKc3RhdHMxOQoKYGBgCgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUHl0aGFnb3JlYW4gVGhlb3JlbSBvZiBCYXNlYmFsbCIKYXV0aG9yOiAnTW9qaXNvbHV3YSAoSmlzbykgQXdlJwpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIFdoYXQgaXMgdGhlIFRoZW9yZW0/ClRoaXMgdGhlb3JlbSB3YXMgZGVyaXZlZCB3aXRoIHRoZSBnb2FsIG9mIHByZWRpY3RpbmcgYSB0ZWFtcyB3aW4gcGVyY2VudGFnZSBmb3IgdGhlIGZvbGxvd2luZyBzZWFzb24gYmFzZWQgb24gdGhlIHJ1bnMgc2NvcmVkIGFuZCBhbGxvd2VkIGR1cmluZyB0aGVpciBwcmV2aW91cyBzZWFzb24uIEl0IGlzIGNhbGxlZCB0aGUgcHl0aGFnb3JlYW4gdGhlb3JlbSBvZiBiYXNlYmFsbCBiZWNhdXNlIGl0J3MgYmFzZWQgb2YgdGhlIG9yaWdpbmlhbCBweXRoYWdvcmVhbiB0aGVvcmVtIHV0aWxpemVkIHRvIHNvbHZlIGZvciB0aGUgaHlwb3RlbnVzZSBvZiBhIHRyaWFuZ2xlLgoKCiMjIENhbGN1bGF0aW9uCgokJCBQY3QgPSAgXGZyYWN7cnVucyBzY29yZWQgXjJ9e3J1bnMgc2NvcmVkXjIgKyBydW5zIGFsbG93ZWReMn0kJAoKCiMjIFRoZW9yZW0gZm9yIDIwMTkgVGVhbXMKCkRhdGEgZnJvbSBCYXNlYmFsbCBSZWZlcmVuY2UgLiBjb20KIFByb3ZpZGVkIGJ5IDxhIGhyZWY9Imh0dHBzOi8vd3d3LnNwb3J0cy1yZWZlcmVuY2UuY29tL3NoYXJpbmcuaHRtbD91dG1fc291cmNlPWRpcmVjdCZ1dG1fbWVkaXVtPVNoYXJlJnV0bV9jYW1wYWlnbj1TaGFyZVRvb2wiPkJhc2ViYWxsLVJlZmVyZW5jZS5jb208L2E+OiA8YSBocmVmPSJodHRwczovL3d3dy5iYXNlYmFsbC1yZWZlcmVuY2UuY29tL2xlYWd1ZXMvbWFqb3JzLzIwMTkuc2h0bWw/c3ImdXRtX3NvdXJjZT1kaXJlY3QmdXRtX21lZGl1bT1TaGFyZSZ1dG1fY2FtcGFpZ249U2hhcmVUb29sI3RlYW1zX3N0YW5kYXJkX3BpdGNoaW5nIj5WaWV3IE9yaWdpbmFsIFRhYmxlPC9hPjxicj5HZW5lcmF0ZWQgNi8yNi8yMDIxLgoKKiBub3RlOiBJIHdpbGwgYmUgZXhhbWluaW5nIHRoZSBydW4gZGF0YSBmcm9tIHRoZSAyMDE4IGFuZCAyMDE5IHNlYXNvbnMsIGR1ZSB0byB0aGUgMjAyMCBzZWFzb24gYmVpbmcgc2hvcnRlbmVkIGZvbGxvd2luZyB0aGUgQ09WSUQtMTkgcGFuZGVtaWMKCmBgYHtyfQpsaWJyYXJ5KGdncGxvdDIpICAgIyNsb2FkaW5nIGxpYnJhcmllcwpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgoKYGBge3J9CnN0YXRzMTggPC0KICByZWFkLmNzdignbWxicGl0Y2hkYXRhMjAxOC5jc3YnKQpzdGF0czE4CmBgYAoKCgpgYGB7cn0Kc3RhdHMxOSA8LQogIHJlYWQuY3N2KCdtbGJwaXRjaGluZ2RhdGEyMDE5LmNzdicpCnN0YXRzMTkKCmBgYAoKCg==</div>
 
 
 
