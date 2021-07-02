@@ -8,7 +8,7 @@ output: html_notebook
 This theorem was derived with the goal of predicting a teams win percentage for the following season based on the runs scored and allowed during their previous season. It is called the pythagorean theorem of baseball because it's based of the originial pythagorean theorem utilized to solve for the hypotenuse of a triangle.
 
 
-## Calculation
+### Calculation
 
 $$ Pct =  \frac{runs scored ^2}{runs scored^2 + runs allowed^2}$$
 
