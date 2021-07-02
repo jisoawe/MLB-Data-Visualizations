@@ -6,13 +6,11 @@ output: html_notebook
 
 # What is ERA?
 
-Earned Run Average (ERA) is a measure of the average amount runs a pitcher gives up during a game. The higher a pitchers ERA, the more runs a pitcher has given up. ERA is traditionally a go to way of analyzing a pitchers effectiveness. In this notebook we will be analyzing different pitchers ERA's and some additional factors that can influence them.
+Earned Run Average (ERA) is a measure of the average amount runs a pitcher gives up during a game. The higher a pitchers ERA, the more runs a pitcher has given up. ERA is traditionally a go to way of analyzing a pitchers effectiveness, seeing as it is a defense independent pitching statistics (DIPS). In this notebook we will be analyzing different pitchers ERA's and some additional factors that can influence them.
 
 
 
 ### Calculation 
-
-
 
 
 
@@ -26,12 +24,19 @@ library(dplyr)
 library(tidyverse)
 ```
 
+# Pitch Type
+
+One of the biggest influencing factors in the likelihood that a ball thrown by a pitcher will be hit is the type of pitch thrown. There are several various pitch types, including the fastball, slider, curveball, changeup, fourseam, sinker, and cutter, which have their speed measured in miles per hour. Fastballs typically have the fastest speed and curveballs and cutters are typically the slowest. Due to factors, such as reaction time, hitters are less likely to hit faster balls.
+
 
 ```{r}
-spin <-
+spin <-  #loading pitch data downloaded from Baseball Savant
   read.csv('active-spin.csv')
 spin
 ```
 
+```{r}
+
+```
 
 

@@ -1763,7 +1763,7 @@ summary {
 <!-- rnb-text-begin -->
 <div id="what-is-era" class="section level1">
 <h1>What is ERA?</h1>
-<p>Earned Run Average (ERA) is a measure of the average amount runs a pitcher gives up during a game. The higher a pitchers ERA, the more runs a pitcher has given up. ERA is traditionally a go to way of analyzing a pitchers effectiveness. In this notebook we will be analyzing different pitchers ERA’s and some additional factors that can influence them.</p>
+<p>Earned Run Average (ERA) is a measure of the average amount runs a pitcher gives up during a game. The higher a pitchers ERA, the more runs a pitcher has given up. ERA is traditionally a go to way of analyzing a pitchers effectiveness, seeing as it is a defense independent pitching statistics (DIPS). In this notebook we will be analyzing different pitchers ERA’s and some additional factors that can influence them.</p>
 <div id="calculation" class="section level3">
 <h3>Calculation</h3>
 <p><span class="math display">\[\frac {9*Earned Runs}{Innings Pitched}\]</span></p>
@@ -1789,6 +1789,11 @@ x dplyr::lag()    masks stats::lag()</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+</div>
+<div id="pitch-type" class="section level1">
+<h1>Pitch Type</h1>
+<p>One of the biggest influencing factors in the likelihood that a ball thrown by a pitcher will be hit is the type of pitch thrown. There are several various pitch types, including the fastball, slider, curveball, changeup, fourseam, sinker, and cutter, which have their speed measured in miles per hour. Fastballs typically have the fastest speed and curveballs and cutters are typically the slowest. Due to factors, such as reaction time, hitters are less likely to hit faster balls.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BpbiA8LVxuICByZWFkLmNzdignYWN0aXZlLXNwaW4uY3N2JylcbnNwaW5cbmBgYCJ9 -->
@@ -1806,10 +1811,13 @@ spin</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
-</div>
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCmF1dGhvcjogJ01vamlzb2x1d2EgKEppc28pIEF3ZScKdGl0bGU6ICJFUkEgRXhwbGFpbmVkIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIFdoYXQgaXMgRVJBPwoKRWFybmVkIFJ1biBBdmVyYWdlIChFUkEpIGlzIGEgbWVhc3VyZSBvZiB0aGUgYXZlcmFnZSBhbW91bnQgcnVucyBhIHBpdGNoZXIgZ2l2ZXMgdXAgZHVyaW5nIGEgZ2FtZS4gVGhlIGhpZ2hlciBhIHBpdGNoZXJzIEVSQSwgdGhlIG1vcmUgcnVucyBhIHBpdGNoZXIgaGFzIGdpdmVuIHVwLiBFUkEgaXMgdHJhZGl0aW9uYWxseSBhIGdvIHRvIHdheSBvZiBhbmFseXppbmcgYSBwaXRjaGVycyBlZmZlY3RpdmVuZXNzLiBJbiB0aGlzIG5vdGVib29rIHdlIHdpbGwgYmUgYW5hbHl6aW5nIGRpZmZlcmVudCBwaXRjaGVycyBFUkEncyBhbmQgc29tZSBhZGRpdGlvbmFsIGZhY3RvcnMgdGhhdCBjYW4gaW5mbHVlbmNlIHRoZW0uCgoKCiMjIyBDYWxjdWxhdGlvbiAKCgoKCgokJFxmcmFjIHs5KkVhcm5lZCBSdW5zfXtJbm5pbmdzIFBpdGNoZWR9JCQKCgoKYGBge3J9CmxpYnJhcnkoZ2dwbG90MikgICAjI2xvYWRpbmcgbGlicmFyaWVzCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKCgpgYGB7cn0Kc3BpbiA8LQogIHJlYWQuY3N2KCdhY3RpdmUtc3Bpbi5jc3YnKQpzcGluCmBgYAoKCgo=</div>
+<div id="rmd-source-code">LS0tCmF1dGhvcjogJ01vamlzb2x1d2EgKEppc28pIEF3ZScKdGl0bGU6ICJFUkEgRXhwbGFpbmVkIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIFdoYXQgaXMgRVJBPwoKRWFybmVkIFJ1biBBdmVyYWdlIChFUkEpIGlzIGEgbWVhc3VyZSBvZiB0aGUgYXZlcmFnZSBhbW91bnQgcnVucyBhIHBpdGNoZXIgZ2l2ZXMgdXAgZHVyaW5nIGEgZ2FtZS4gVGhlIGhpZ2hlciBhIHBpdGNoZXJzIEVSQSwgdGhlIG1vcmUgcnVucyBhIHBpdGNoZXIgaGFzIGdpdmVuIHVwLiBFUkEgaXMgdHJhZGl0aW9uYWxseSBhIGdvIHRvIHdheSBvZiBhbmFseXppbmcgYSBwaXRjaGVycyBlZmZlY3RpdmVuZXNzLCBzZWVpbmcgYXMgaXQgaXMgYSBkZWZlbnNlIGluZGVwZW5kZW50IHBpdGNoaW5nIHN0YXRpc3RpY3MgKERJUFMpLiBJbiB0aGlzIG5vdGVib29rIHdlIHdpbGwgYmUgYW5hbHl6aW5nIGRpZmZlcmVudCBwaXRjaGVycyBFUkEncyBhbmQgc29tZSBhZGRpdGlvbmFsIGZhY3RvcnMgdGhhdCBjYW4gaW5mbHVlbmNlIHRoZW0uCgoKCiMjIyBDYWxjdWxhdGlvbiAKCgoKJCRcZnJhYyB7OSpFYXJuZWQgUnVuc317SW5uaW5ncyBQaXRjaGVkfSQkCgoKCmBgYHtyfQpsaWJyYXJ5KGdncGxvdDIpICAgIyNsb2FkaW5nIGxpYnJhcmllcwpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgojIFBpdGNoIFR5cGUKCk9uZSBvZiB0aGUgYmlnZ2VzdCBpbmZsdWVuY2luZyBmYWN0b3JzIGluIHRoZSBsaWtlbGlob29kIHRoYXQgYSBiYWxsIHRocm93biBieSBhIHBpdGNoZXIgd2lsbCBiZSBoaXQgaXMgdGhlIHR5cGUgb2YgcGl0Y2ggdGhyb3duLiBUaGVyZSBhcmUgc2V2ZXJhbCB2YXJpb3VzIHBpdGNoIHR5cGVzLCBpbmNsdWRpbmcgdGhlIGZhc3RiYWxsLCBzbGlkZXIsIGN1cnZlYmFsbCwgY2hhbmdldXAsIGZvdXJzZWFtLCBzaW5rZXIsIGFuZCBjdXR0ZXIsIHdoaWNoIGhhdmUgdGhlaXIgc3BlZWQgbWVhc3VyZWQgaW4gbWlsZXMgcGVyIGhvdXIuIEZhc3RiYWxscyB0eXBpY2FsbHkgaGF2ZSB0aGUgZmFzdGVzdCBzcGVlZCBhbmQgY3VydmViYWxscyBhbmQgY3V0dGVycyBhcmUgdHlwaWNhbGx5IHRoZSBzbG93ZXN0LiBEdWUgdG8gZmFjdG9ycywgc3VjaCBhcyByZWFjdGlvbiB0aW1lLCBoaXR0ZXJzIGFyZSBsZXNzIGxpa2VseSB0byBoaXQgZmFzdGVyIGJhbGxzLgoKCmBgYHtyfQpzcGluIDwtICAjbG9hZGluZyBwaXRjaCBkYXRhIGRvd25sb2FkZWQgZnJvbSBCYXNlYmFsbCBTYXZhbnQKICByZWFkLmNzdignYWN0aXZlLXNwaW4uY3N2JykKc3BpbgpgYGAKCmBgYHtyfQoKYGBgCgoK</div>
 
 
 
