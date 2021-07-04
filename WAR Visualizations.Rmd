@@ -24,23 +24,68 @@ $$\frac {BA +BR + FR + PosAdj + LgAdj + ReplaceRuns}{RPW} $$
 library(tidyverse)     ##loading packages
 library(ggplot2)
 library(dplyr)
+library(rvest)
+library(stringr)
 ```
 
 
 ```{r}
-page <- 'https://www.espn.com/mlb/stats/player/_/view/batting/table/batting/sort/hits/dir/desc'
-tableA <- page %>%
+page <- 'https://www.baseball-reference.com/leagues/majors/2021-batting-leaders.shtml'
+
+BattingLeaders <- page %>%
   read_html() %>%
   html_nodes(css = 'table') %>%
   html_table(fill = TRUE)
 
-tableA
+BattingLeaders
 ```
 
 
+```{r}
+warLeadAll <-
+  head(BattingLeaders[[2]])
+warLeadAll
+```
+
+```{r}
+apLeaders <-
+  warALL %>%
+  rename(Rank = `X1`,
+         Player = `X2`,
+         WAR = `X3`)
+apLeaders
+```
 
 
+```{r}
+Tm <- strsplit(as.character(allPlayers$Player), '•')
+do.call(rbind, Tm)
+```
 
+```{r}
+Tm = str_split_fixed(allPlayers$Player, '•',2)
+x = Tm[,2]
+ap <-
+  allPlayers %>%
+  mutate(Team = x)
+ap
+```
+
+
+```{r}
+ap$Player <-
+  gsub('•.*', '', as.character(allPlayers$Player))
+ap
+```
+
+
+```{r}
+agr <-
+  ap %>%
+  ggplot(aes(x = Player, y = WAR)) +
+  geom_bar(stat = 'identity')
+agr
+```
 
 
 
