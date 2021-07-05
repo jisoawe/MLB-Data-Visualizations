@@ -82,8 +82,9 @@ ap
 ```{r}
 agr <-
   ap %>%
-  ggplot(aes(x = Player, y = WAR)) +
-  geom_bar(stat = 'identity')
+  ggplot(aes(x = Player, y = WAR, fill = Team)) +
+  geom_bar(stat = 'identity') +
+  ggtitle('Overall WAR Leaders')
 agr
 ```
 
