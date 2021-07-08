@@ -22,6 +22,7 @@ $$\frac {9*Earned Runs}{Innings Pitched}$$
 library(ggplot2)   ##loading libraries
 library(dplyr)
 library(tidyverse)
+library(ggExtra)
 ```
 
 # Pitch Type
@@ -36,7 +37,15 @@ spin
 ```
 
 ```{r}
+spgr <-
+  spin%>%
+  ggplot(aes(x = active_spin_sinker, y = active_spin_fourseam, color =pitch_hand)) +
+  geom_point(stat = 'identity')
 
+p1 <-
+  ggMarginal(spgr, type = 'histogram', fill = 'grey', size = 3)
+p1
 ```
+
 
 
