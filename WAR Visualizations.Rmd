@@ -20,12 +20,18 @@ futher explanation: https://www.baseball-reference.com/about/war_explained.shtml
 $$\frac {BA +BR + FR + PosAdj + LgAdj + ReplaceRuns}{RPW} $$
 
 
+
+Provided by <a href="https://www.sports-reference.com/sharing.html?utm_source=direct&utm_medium=Share&utm_campaign=ShareTool">Baseball-Reference.com</a>: <a href="https://www.baseball-reference.com/leagues/majors/2021-standard-batting.shtml?sr&utm_source=direct&utm_medium=Share&utm_campaign=ShareTool#players_standard_batting">View Original Table</a><br>Generated 7/5/2021.
+
+
+
 ```{r}  
 library(tidyverse)     ##loading packages
 library(ggplot2)
 library(dplyr)
 library(rvest)
 library(stringr)
+library(ggExtra)
 ```
 
 
@@ -88,8 +94,36 @@ agr <-
 agr
 ```
 
+```{r}
+Tatis <-
+  read.csv('tatis career.csv')
+Tatis
+```
+
+```{r}
+TR <-
+  Tatis %>%
+  ggplot(aes(x = Year, y = R, fill = BA)) +
+  geom_bar(stat = 'identity') +
+  theme(legend.position = 'none')
+
+TR
+```
+
+```{r}
+TPAR <-
+  Tatis %>%
+  ggplot(aes(x = Year, y = PA)) +
+  geom_bar(stat = 'identity')
+
+TPAR
+```
 
 
+
+```{r}
+TPAR + coord_polar()
+```
 
 
 
