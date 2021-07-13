@@ -9,12 +9,13 @@ output: html_notebook
 Earned Run Average (ERA) is a measure of the average amount runs a pitcher gives up during a game. The higher a pitchers ERA, the more runs a pitcher has given up. ERA is traditionally a go to way of analyzing a pitchers effectiveness, seeing as it is a defense independent pitching statistics (DIPS). In this notebook we will be analyzing different pitchers ERA's and some additional factors that can influence them.
 
 
-
 ### Calculation 
 
 
-
 $$\frac {9*Earned Runs}{Innings Pitched}$$
+
+
+The calculation of ERA is done by multiplying the number of earned runs off of a pitcher divided by the number of innings they pitched and multiplied by nine (for the nine innings in a full game). If there are players on base when the pitcher leaves, any runs scored by said players would count against the pitcher. The lower the ERA, the better. This stat gives an estimation for the number of runs earned a pitcher would have given up if they were to pitch for a full game.
 
 
 
@@ -25,13 +26,67 @@ library(tidyverse)
 library(ggExtra)
 ```
 
+# Team ERA's
+
+Data Provided by: https://www.baseball-reference.com/leagues/majors/2021-standard-pitching.shtml on July 13th
+
+```{r}
+tpitch <-  ##Team Standard Pitching data from Baseball Reference
+  read.csv('TeamPitching21.csv')
+tpitch
+```
+
+```{r}
+eragr <-
+  tpitch %>%
+  ggplot(aes(x = Tm, y = ERA, fill = Tm)) +
+  geom_bar(stat = 'identity') +
+  xlab('Team') +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_fill_manual(values = c('ARI' = '#D32F2F',
+                               'ATL' = '#0D47A1',
+                               'BAL' = 'darkorange',
+                               'BOS' = 'darkred',
+                               'CHC' = '#1A237E',
+                               'CWS' = 'black',
+                               'CIN' = '#EF5350',
+                               'CLE' = '#1E88E5',
+                               'COL' = '#4b0062',
+                               'DET' = 'darkorange3', 
+                               'HOU' = 'chocolate1',
+                               'KCR' = 'deepskyblue2',
+                               'LAA' = 'brown1',
+                               'LAD'= 'deepskyblue4',
+                               'MIA'= '#4DD0E1',
+                               'MIL'= '#FFD54F',
+                               'MIN'= '#283573',
+                               'NYY' = 'blue4',
+                               'NYM' = 'darkorange2',
+                               'OAK' = 'darkgreen',
+                               'PHI'= '#F44336',
+                               'PIT'= '#FFEE58',
+                               'SDP' = '#5d4037',
+                               'SEA' = '#26A69A',
+                               'SFG'= '#FF9800',
+                               'STL'= 'brown',
+                               'TBR' = 'darkturquoise',
+                               'TEX' = 'darkblue',
+                               'TBJ' = '#0277BD',
+                               'WSH' = 'brown3'))
+eragr
+```
+
+
+The graph above details the ERA of each team in the MLB, with the average ERA being about 4.18...
+
+
 # Pitch Type
 
 One of the biggest influencing factors in the likelihood that a ball thrown by a pitcher will be hit is the type of pitch thrown. There are several various pitch types, including the fastball, slider, curveball, changeup, fourseam, sinker, and cutter, which have their speed measured in miles per hour. Fastballs typically have the fastest speed and curveballs and cutters are typically the slowest. Due to factors, such as reaction time, hitters are less likely to hit faster balls.
 
 
 ```{r}
-spin <-  #loading pitch data downloaded from Baseball Savant
+spin <-  #loading pitch data downloaded from Baseball Savant from June 30th
   read.csv('active-spin.csv')
 spin
 ```
@@ -40,7 +95,9 @@ spin
 spgr <-
   spin%>%
   ggplot(aes(x = active_spin_sinker, y = active_spin_fourseam, color =pitch_hand)) +
-  geom_point(stat = 'identity')
+  geom_point(stat = 'identity') +
+  xlab('Sinker Speed (mph)') +
+  ylab('Fourseam Speed (mph)')
 
 p1 <-
   ggMarginal(spgr, type = 'histogram', fill = 'grey', size = 3)
@@ -49,3 +106,6 @@ p1
 
 
 
+
+
+# ERA+
