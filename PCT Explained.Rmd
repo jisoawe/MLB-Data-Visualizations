@@ -220,6 +220,7 @@ wmgr <-  ##win margin graph
   geom_bar(stat = 'identity') +
   xlab('Game Number') +
   ylab('Win Margin') +
+  labs(title = 'Washington Nationals 2019 Run Differential of Games Won') +
   scale_fill_manual(values = c('ATL' = '#0D47A1',
                                'ARI' = '#D32F2F',
                                'BAL' = '#E65100',
