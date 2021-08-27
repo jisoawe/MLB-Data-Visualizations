@@ -80,7 +80,9 @@ wpg <-
   theme(axis.text.x = element_text(angle = 90)) +
   scale_fill_brewer(palette = 'Set1') +
   xlab('Team') +
-  ylab('Win Percentage') 
+  ylab('Win Percentage') +
+  labs(title = "MLB's 2021 Team Pct",
+       caption = 'As of June 5th 2021')
 
 wpg
 ```
@@ -161,6 +163,7 @@ LM <-  ##creating the graph
   geom_bar(stat = 'identity') +  ##bar graph
   xlab('Game Number') +  ##labels
   ylab('Loss Margin') +
+  labs(title = 'Washington Nationals Run Differential of Games Lost') +
   scale_fill_manual(values = c('ATL' = '#0D47A1',
                                'ARI' = '#D32F2F',
                                'BAL' = '#E65100',
