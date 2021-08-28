@@ -250,7 +250,7 @@ wmgr
 ```
 
 
-This graph displays each game the Nationals won during thw 2019 season and by how many runs they won by. Similar to the previous graph the color of the bar is determined by what team they played during that game.
+This graph displays each game the Nationals won during the 2019 season and by how many runs they won by. Similar to the previous graph the color of the bar is determined by what team they played during that game.
 
 
 
